@@ -19,6 +19,12 @@ const calculateWinner = (squares) => {
       return squares[a]
     }
   }
+  
+  if (!squares.includes(null)) {
+    return 'Got old on tic tac toe'
+  }
+
+  return null;
 }
 
 const Square = (props) => {
@@ -78,8 +84,11 @@ class Board extends Component {
 
     const winner = calculateWinner(this.state.squares)
 
+    
     let status
-    if (winner) {
+    if (winner === 'Got old on tic tac toe') {
+      status = winner
+    } else if (winner) {
       status = 'Winner: ' + winner;
     } else {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
