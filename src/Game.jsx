@@ -19,7 +19,6 @@ const calculateWinner = (squares) => {
       return squares[a]
     }
   }
-  return null;
 }
 
 const Square = (props) => {
@@ -29,6 +28,13 @@ const Square = (props) => {
     </button>
   )
 }
+
+const ButtonRestart = props => {
+  return (
+    <button className='button-restart' onClick={props.OnRestart}>Restart</button>
+  )
+}
+
 
 class Board extends Component {
   
@@ -62,15 +68,21 @@ class Board extends Component {
     this.setState({squares: Array(9).fill(null)})
   }
 
+  buildRestart() {
+    return (
+      <ButtonRestart OnRestart={() => this.handleStateInitial()}/>
+    )
+  }
+
   render() {
 
     const winner = calculateWinner(this.state.squares)
 
     let status
     if (winner) {
-    status = 'Winner: ' + winner;
+      status = 'Winner: ' + winner;
     } else {
-    status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
 
     return (
@@ -91,6 +103,7 @@ class Board extends Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </div>
+        <div>{winner ? this.buildRestart(): ""}</div>
       </div>
     );
   }

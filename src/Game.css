@@ -34,3 +34,19 @@
   align-items: center;
   margin: 0 auto;
 }
+
+.button-restart {
+  padding: 0;
+  margin-top: 10px;
+  height: 40px;
+  width: 70px;
+  background-color: #fff;
+  border: 1px solid #b5b3b3;
+  font-size: 0.8em;
+  color: #bbb;
+}
+
+.button-restart:hover {
+  background-color: #bbb;
+  color: #000;
+}
