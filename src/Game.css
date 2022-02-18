@@ -1,0 +1,36 @@
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+  font-size: 1.25em;
+  color: #bbb;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 100px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 100px;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+  max-width: 500px;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
